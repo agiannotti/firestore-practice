@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { TutorialService } from './../../_services/tutorial.service';
+import { Component } from '@angular/core';
+import Tutorial from 'src/app/_models/tutorial.model';
 
 @Component({
-  selector: 'app-add',
+  selector: 'add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
 })
-export class AddComponent implements OnInit {
+export class AddComponent {
+  tutorial: Tutorial = new Tutorial();
+  submitted = false;
 
-  constructor() { }
+  constructor(private tutorialService: TutorialService) {}
 
-  ngOnInit(): void {
+  saveTutorial(): void {
+    this.tutorialService.create(this.tutorial).then(() => {
+      console.log('Created new item!');
+      this.submitted = true;
+    });
   }
 
+  newTutorial(): void {
+    this.submitted = false;
+    this.tutorial = new Tutorial();
+  }
 }

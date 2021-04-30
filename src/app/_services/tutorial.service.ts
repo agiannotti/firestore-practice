@@ -29,7 +29,7 @@ export class TutorialService {
     return this.tutorialsRef.doc(id).update(data);
   }
 
-  delet(id: string): Promise<void> {
+  delete(id: string): Promise<void> {
     return this.tutorialsRef.doc(id).delete();
   }
 }

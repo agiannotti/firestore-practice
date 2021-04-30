@@ -1,15 +1,13 @@
+import { TutorialService } from './../../_services/tutorial.service';
 import { Component, OnInit } from '@angular/core';
+import Tutorial from '../../_models/tutorial.model';
 
 @Component({
-  selector: 'app-list',
+  selector: 'list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
