@@ -1,13 +1,14 @@
-import { TutorialService } from './../../_services/tutorial.service';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import Tutorial from '../../_models/tutorial.model';
+import Tutorial from 'src/app/_models/tutorial.model';
+
+import { TutorialService } from './../../_services/tutorial.service';
 
 @Component({
   selector: 'list',
   templateUrl: './list.component.html',
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
   tutorials?: Tutorial[];
   currentTutorial?: Tutorial;
   currentIndex = -1;

@@ -12,19 +12,17 @@
       </li>
     </ul>
   </div>
-
-  <div class="cold-md-6">
+  <div class="col-md-6">
     <div *ngIf="currentTutorial">
       <app-tutorial-details
         (refreshList)="refreshList()"
         [tutorial]="currentTutorial"
-      >
-      </app-tutorial-details>
+      ></app-tutorial-details>
     </div>
 
     <div *ngIf="!currentTutorial">
       <br />
-      <p>Please click on a tutorial...</p>
+      <p>Please click on a Tutorial...</p>
     </div>
   </div>
 </div>

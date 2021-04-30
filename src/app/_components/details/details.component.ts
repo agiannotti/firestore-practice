@@ -16,7 +16,6 @@ import {
 export class DetailsComponent implements OnInit, OnChanges {
   @Input() tutorial?: Tutorial;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
-
   currentTutorial: Tutorial = {
     title: '',
     description: '',
@@ -29,16 +28,16 @@ export class DetailsComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.message = '';
   }
+
   ngOnChanges(): void {
     this.message = '';
     this.currentTutorial = { ...this.tutorial };
   }
+
   updatePublished(status: boolean): void {
     if (this.currentTutorial.id) {
       this.tutorialService
-        .update(this.currentTutorial.id, {
-          published: status,
-        })
+        .update(this.currentTutorial.id, { published: status })
         .then(() => {
           this.currentTutorial.published = status;
           this.message = 'The status was updated successfully!';
@@ -46,6 +45,21 @@ export class DetailsComponent implements OnInit, OnChanges {
         .catch((err) => console.log(err));
     }
   }
+
+  updateTutorial(): void {
+    const data = {
+      title: this.currentTutorial.title,
+      description: this.currentTutorial.description,
+    };
+
+    if (this.currentTutorial.id) {
+      this.tutorialService
+        .update(this.currentTutorial.id, data)
+        .then(() => (this.message = 'The tutorial was updated successfully!'))
+        .catch((err) => console.log(err));
+    }
+  }
+
   deleteTutorial(): void {
     if (this.currentTutorial.id) {
       this.tutorialService
