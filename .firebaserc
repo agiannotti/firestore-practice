@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firestore-practice-6a2f6": {
+      "hosting": {
+        "firestore-practice": [
+          "firestore-practice-6a2f6"
+        ]
+      }
+    }
+  }
+}

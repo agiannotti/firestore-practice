@@ -1,9 +1,9 @@
+import Tutorial from 'src/app/_models/tutorial.model';
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/firestore';
-import Tutorial from 'src/app/_models/tutorial.model';
 
 @Injectable({
   providedIn: 'root',
