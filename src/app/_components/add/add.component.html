@@ -22,7 +22,11 @@
         required
       />
     </div>
+    <button class="btn btn-success" (click)="saveTutorial()">Submit</button>
 
-    <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    </div>
   </div>
 </div>
